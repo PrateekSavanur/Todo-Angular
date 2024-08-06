@@ -1,0 +1,16 @@
+<div class="form-floating">
+  <textarea
+    class="form-control"
+    placeholder="Leave a comment here"
+    id="floatingTextarea"
+    [(ngModel)]="newTodoDesc"
+  ></textarea>
+  <label for="floatingTextarea">Add todo</label>
+  <div class="text-center p-4">
+    <button class="btn btn-success px-4" (click)="addTodo()">Add</button>
+  </div>
+</div>
+
+<div *ngFor="let todo of todos">
+  <app-todo-item [todo]="todo" (todoDelete)="deleteTodo(todo)"></app-todo-item>
+</div>
